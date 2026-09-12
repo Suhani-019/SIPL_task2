@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Wanderly - Travel Booking System</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      Wanderly
+    </div>
+
+    <nav>
+
+      <a href="#home">Home</a>
+
+      <a href="#destinations">
+        Destinations
+      </a>
+
+      <a href="#bookings">
+        My Bookings
+      </a>
+
+      <span id="userArea"></span>
+
+    </nav>
+
+  </header>
+
+
+  <!-- HERO SECTION -->
+
+  <section id="home" class="hero">
+
+    <div class="hero-content">
+
+      <p class="tag">
+        TRAVEL • EXPLORE • REMEMBER
+      </p>
+
+      <h1>
+        Your next journey starts here.
+      </h1>
+
+      <p>
+        Discover beautiful destinations,
+        search for trips and book your next
+        journey easily.
+      </p>
+
+      <a href="#destinations" class="btn">
+        Explore Trips
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- SEARCH -->
+
+  <section class="search-section">
+
+    <div>
+
+      <p class="section-label">
+        SEARCH
+      </p>
+
+      <h2>
+        Where do you want to go?
+      </h2>
+
+    </div>
+
+    <form id="searchForm" class="search-box">
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search city or country"
+      >
+
+      <button type="submit" class="btn">
+        Search
+      </button>
+
+    </form>
+
+  </section>
+
+
+  <!-- DESTINATIONS -->
+
+  <section id="destinations" class="section">
+
+    <div class="section-heading">
+
+      <div>
+
+        <p class="section-label">
+          POPULAR DESTINATIONS
+        </p>
+
+        <h2>
+          Explore Destinations
+        </h2>
+
+      </div>
+
+      <button
+        id="showAllBtn"
+        class="btn btn-light"
+      >
+        Show All
+      </button>
+
+    </div>
+
+    <div
+      id="destinationList"
+      class="cards"
+    ></div>
+
+  </section>
+
+
+  <!-- BOOKINGS -->
+
+  <section
+    id="bookings"
+    class="section"
+  >
+
+    <div class="section-heading">
+
+      <div>
+
+        <p class="section-label">
+          YOUR TRIPS
+        </p>
+
+        <h2>
+          My Bookings
+        </h2>
+
+      </div>
+
+    </div>
+
+    <div id="bookingList">
+
+      <p class="empty">
+        Login to see your bookings.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- LOGIN / REGISTER MODAL -->
+
+  <div
+    id="authModal"
+    class="modal hidden"
+  >
+
+    <div class="modal-card">
+
+      <button
+        class="close"
+        onclick="closeModal()"
+      >
+        ×
+      </button>
+
+      <div id="authContent"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- BOOKING MODAL -->
+
+  <div
+    id="bookingModal"
+    class="modal hidden"
+  >
+
+    <div class="modal-card">
+
+      <button
+        class="close"
+        onclick="closeBookingModal()"
+      >
+        ×
+      </button>
+
+      <h2>
+        Book Your Trip
+      </h2>
+
+      <p
+        id="bookingDestination"
+        class="muted"
+      ></p>
+
+      <form id="bookingForm">
+
+        <input
+          type="hidden"
+          id="destinationId"
+        >
+
+        <label>
+          Travel Date
+        </label>
+
+        <input
+          type="date"
+          id="travelDate"
+          required
+        >
+
+        <label>
+          Number of Travelers
+        </label>
+
+        <input
+          type="number"
+          id="travelers"
+          min="1"
+          max="10"
+          value="1"
+          required
+        >
+
+        <button
+          type="submit"
+          class="btn full"
+        >
+          Confirm Booking
+        </button>
+
+      </form>
+
+      <p class="small-note">
+        Payment gateway is optional.
+        A demo payment option is provided.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- MESSAGE -->
+
+  <div id="toast" class="toast"></div>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
